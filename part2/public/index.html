@@ -63,7 +63,7 @@
         if (data.success) {
           alert('Login successful!');
           // Redirect to the dashboard or another page
-          window.location.href = '/dashboard';
+          window.location.href = data.redirect;
         } else {
           alert('Login failed: ' + data.message);
         }
