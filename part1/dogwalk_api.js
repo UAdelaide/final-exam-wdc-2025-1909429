@@ -9,9 +9,6 @@ const pool = mysql.createPool({
   password: 'root',
   database: 'DogWalkService'
 });
-
-
-
 router.get('/dogs', async (req, res) => {
     try {
         const [rows] = await pool.query(
