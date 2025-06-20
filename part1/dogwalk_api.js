@@ -20,6 +20,6 @@ router.get('/dogs', async (req, res) => {
             LEFT JOIN Users ON Dogs.owner_id = Users.user_id`);
         res.json(rows);
     } catch (error) {
-        console.error('Error fetching dogs:', error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
+});
