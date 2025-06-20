@@ -33,4 +33,7 @@ router.get('/walkrequests/open', async (req, res) => {
       WHERE wr.status = 'open'
       `);
         res.json(rows);
+    } catch (error) {
+        res.status(500).json({ error: 'Internal Server Error' });
     }
+});
