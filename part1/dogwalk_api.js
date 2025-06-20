@@ -21,4 +21,4 @@ app.get('/api/walks', async (req, res) => {
         JOIN Users ON Dogs.owner_id = Users.user_id');
     res.json(rows);
   }catch (error) {
-    res.status(500).json({ error: 'Database query failed' });
+    res.status(500).json({ error: 'Database query failed' ,details: error.message });
