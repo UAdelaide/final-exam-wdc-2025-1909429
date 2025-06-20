@@ -39,9 +39,26 @@
         };
       }
     }).mount('#app');
+  document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Simulate a login process
+      if (username === 'user' && password === 'password') {
+        alert('Login successful!');
+      } else {
+        alert('Invalid username or password.');
+      }
+    });
+
+
   </script>
 
-  
+
+
+
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
