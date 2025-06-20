@@ -12,14 +12,5 @@ const pool = mysql.createPool({
 
 
 
-app.get('/api/walks', async (req, res) => {
-  try {
-    const [rows] = await db.execute(`
-        SELECT Dogs.name AS dog_name,Dogs.size,Users.name AS owner_username FROM Dogs
-        JOIN Users ON Dogs.owner_id = Users.user_id`);
-    res.json(rows);
-  }catch (error) {
-    res.status(500).json({ error: 'Database query failed' ,details: error.message  });
-    }
-);
-
+router.get('/dogs', async (req, res) => {
+    try {
