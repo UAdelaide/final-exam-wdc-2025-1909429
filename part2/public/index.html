@@ -63,7 +63,7 @@
           console.log('User is a walker');
           window.location.href = '/walker-dashboard.html';
         } else {
-          alert('Login failed: ' + data.message);
+          alert('Login failed: ' + data.message||);
         }
      console.log('Login successful:', data)
       }
