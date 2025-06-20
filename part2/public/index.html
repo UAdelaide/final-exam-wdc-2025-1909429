@@ -57,7 +57,7 @@
           });
 
         const data = await res.json();
-        if (data.success) {
+        if (data.user.role=="owner") {
           alert('Login successful!');
           // Redirect to the dashboard or another page
           window.location.href = data.redirect;
