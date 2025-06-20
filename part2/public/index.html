@@ -45,7 +45,18 @@
           loginPass: '',
           loginError: ''
         };
-      }
+      },
+      methods: {
+        trylogin() {
+          async.loginError = '';
+          fetch('/api/users/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              username: this.loginUser,
+              password: this.loginPass
     }).mount('#app');
   </script>
 
