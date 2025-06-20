@@ -14,4 +14,6 @@ async function initializeDatabase() {
   console.log('Database connected');
 }
 
-app
+app.get('/api/walks', async (req, res) => {
+  try {
+    const [rows] = await db.query('SELECT * FROM walks');
