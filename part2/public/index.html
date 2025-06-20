@@ -58,6 +58,9 @@
 
         const data = await res.json();
         if (data.user.role=="owner") {
+          console.log('User is an owner');
+          window.location.href = '/owner-dashboard.html';
+        } else if (data.user.role=="walker") {
           alert('Login successful!');
           // Redirect to the dashboard or another page
           window.location.href = data.redirect;
