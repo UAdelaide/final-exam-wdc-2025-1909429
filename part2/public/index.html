@@ -85,6 +85,15 @@
             this.loginError = 'An error occurred while trying to log in.';
             console.error('Login error:', error);
           }
+        },
+        async loadDogs() {
+          try {
+            const response = await fetch('/api/users/getPets');
+            if (!response.ok) throw new Error('Failed to fetch dogs');
+            this.dogs = await response.json();
+          } catch (error) {
+            console.error('Error loading dogs:', error);
+          }
         }
       }
     }).mount('#app');
