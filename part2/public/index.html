@@ -59,7 +59,14 @@
           body: JSON.stringify({ username, password })
         });
 
-        
+        const data = await res.json();
+        if (data.success) {
+          alert('Login successful!');
+          // Redirect to the dashboard or another page
+          window.location.href = '/dashboard';
+        } else {
+          alert('Login failed: ' + data.message);
+        }
 
 
   </script>
