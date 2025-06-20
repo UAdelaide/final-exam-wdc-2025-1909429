@@ -26,7 +26,9 @@
       <input type="password" class="form-control" id="inputPassword" v-model="loginPass">
     </div>
     <button class="btn btn-primary" @click="trylogin">Login</button>
-    
+    <div class="mt-3" v-if="loginError" style="color: red;">
+      {{ loginError }}
+    </div>
     <a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>
     <a href="walker-dashboard.html" class="btn btn-outline-success">Walker Dashboard</a>
   </div>
