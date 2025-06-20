@@ -10,7 +10,8 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 const session = require('express-session');
 app.use(session({
-    se
+    secret:'qwerty
+    '
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
