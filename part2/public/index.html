@@ -61,9 +61,9 @@
             });
 
             const data = await response.json();
-            if(data.user&&result.user.role === 'owner') {
+            if(data.user&&data.user.role === 'owner') {
               window.location.href = 'owner-dashboard.html';
-            } else if(result.user && result.user.role === 'walker') {
+            } else if(data.user && data.user.role === 'walker') {
               window.location.href = 'walker-dashboard.html';
             } else {
               this.loginError = 'Invalid credentials or user role.';
