@@ -13,7 +13,10 @@ app.use(session({
     secret:'qwerty',
     resave: false,
     saveUninitialized: false,
-    
+    cookie:{
+        secure: false, // Set to true if using HTTPS
+        maxAge: 1000 * 60 * 60 // 1 hour
+    }
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
