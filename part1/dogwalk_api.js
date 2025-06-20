@@ -3,7 +3,12 @@ const router = express.Router();
 const mysql = require('mysql2/promise');
 const PORT = 8080;
 
-let db;
+const pool = mysql.createPool({
+  socketPath: '/var/run/mysqld/mysqld.sock',
+  user: 'root',
+  password: 'root',
+  database: 'DogWalkService'
+});
 async function initializeDatabase() {
   db = await mysql.createConnection({
     host: 'localhost',
