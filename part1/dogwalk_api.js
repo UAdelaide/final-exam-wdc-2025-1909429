@@ -18,4 +18,8 @@ router.get('/dogs', async (req, res) => {
             `SELECT Dogs.name AS dog_name, Dogs.size, Users.username AS owner_username
             FROM Dogs
             LEFT JOIN Users ON Dogs.owner_id = Users.user_id`);
-            
+        res.json(rows);
+    } catch (error) {
+        console.error('Error fetching dogs:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
