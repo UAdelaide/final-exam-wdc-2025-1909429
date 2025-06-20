@@ -1,4 +1,3 @@
-const dogwalkApi = require('../part1/dogwalk_api');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
