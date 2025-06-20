@@ -37,3 +37,7 @@ router.get('/walkrequests/open', async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
+
+router.get('/walkers/summary', async (req, res) => {
+    try {
+        const [rows] = await pool.query(`
