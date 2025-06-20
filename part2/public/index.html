@@ -13,7 +13,7 @@
     <h1 class="mb-4 text-primary">{{ message }}</h1>
     <p class="lead">Connect with trusted walkers for your beloved dog!</p>
     <h2 class="mt-5">Meet dogs</h2>
-    <div class="row" v-if ="dogs.length > 0">
+    <div class="row" v-if="dogs && dogs.length > 0">
       <div class="col-md-4 mb-4" v-for="dog in dogs" :key="dog.dog_id">
         <div class="card">
           <img :src="dog.image" class="card-img-top" alt="Dog Image">
