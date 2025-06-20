@@ -10,15 +10,7 @@ const pool = mysql.createPool({
   database: 'DogWalkService'
 });
 
-async function initializeDatabase() {
-  db = await mysql.createConnection({
-    host: 'localhost',
-    user:'root',
-    password: '',
-    database: 'DogWalkService'
-  });
-  console.log('Database connected');
-}
+
 
 app.get('/api/walks', async (req, res) => {
   try {
