@@ -30,6 +30,29 @@
     </div>
     <script>
     const { createApp } = Vue;
-    
+    createApp({
+        data() {
+            return {
+                dogImage: '123',
+                doginfo: '123'
+            }
+        },
+        methods: {
+            async getdog() {
+                try {
+                    const response = await fetch('https://dog.ceo/api/breeds/image/random');
+                    const data = await response.json();
+                    this.dogImage = data.message;
+                    this.doginfo = 'Here is a random dog for you!';
+                } catch (error) {
+                    console.error('Error fetching dog image:', error);
+                    this.doginfo = 'Failed to fetch a dog image.';
+                }
+            }
+        },
+        mounted() {
+            this.getdog();
+        }
+    }).mount('#app');
 
     </html>
