@@ -65,7 +65,8 @@
           window.location.href = '/index.html';
         }
         async function getCurrentUser() {
-          const res= await fetch('/api/users/current');
+          const res= await fetch('/api/users/me');
+          const user=await res.json();
         async function applyToWalk(requestId) {
           try {
             const res = await fetch(`/api/walks/${requestId}/apply`, {
