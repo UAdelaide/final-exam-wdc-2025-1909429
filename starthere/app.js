@@ -6,6 +6,7 @@ var logger = require('morgan');
 var mysql = require('mysql2/promise');
 
 var app = express();
+app.use('/api', dogwalkApi);
 
 app.use(logger('dev'));
 app.use(express.json());
