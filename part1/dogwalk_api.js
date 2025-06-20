@@ -9,7 +9,7 @@ async function initializeDatabase() {
     host: 'localhost',
     user:'root',
     password: '',
-    database: 'dogwalk'
+    database: 'DogWalkService'
   });
   console.log('Database connected');
 }
