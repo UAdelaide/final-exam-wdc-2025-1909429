@@ -93,7 +93,12 @@
             for (const dog of doglist) {
               const imgRes = await fetch('https://dog.ceo/api/breeds/image/random');
               const imgData = await imgRes.json();
+              dog.image = imgData.message; // Assign random dog image
             }
+            this.dogs = doglist;
+          } catch (error) {
+            console.error('Error fetching dog data:', error);
+          }
         }
       }
     }).mount('#app');
