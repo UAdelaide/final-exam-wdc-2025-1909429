@@ -85,7 +85,7 @@
         const dogs = ref([]);
         async function loadDogs() {
           try {
-            const res = await fetch('/api/dogs');
+            const res = await fetch('/api/users/getPets');
             dogs.value = await res.json();
           } catch (err) {
             error.value = 'Failed to load dogs';
@@ -137,6 +137,7 @@
 
         onMounted(() => {
           loadWalks();
+          loadDogs();
         });
 
         return {
