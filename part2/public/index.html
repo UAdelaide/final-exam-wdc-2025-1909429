@@ -30,7 +30,7 @@
       {{ loginError }}
     </div>
 
-    
+
     <a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>
     <a href="walker-dashboard.html" class="btn btn-outline-success">Walker Dashboard</a>
   </div>
@@ -40,7 +40,10 @@
     createApp({
       data() {
         return {
-          message: 'Welcome to the Dog Walking Service!'
+          message: 'Welcome to the Dog Walking Service!',
+          loginUser: '',
+          loginPass: '',
+          loginError: ''
         };
       }
     }).mount('#app');
