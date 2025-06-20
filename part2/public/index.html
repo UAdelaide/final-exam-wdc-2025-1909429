@@ -63,8 +63,12 @@
               this.errorMess = "Unknown user role.";
             }else {
              alert('Login failed: ' + data.error);
-             
+
             }
+          } catch (error) {
+            console.error('Error during login:', error);
+            alert('Login failed: ' + error.message);
+            
 
 
         }
