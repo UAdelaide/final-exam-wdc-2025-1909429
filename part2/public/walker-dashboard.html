@@ -65,16 +65,7 @@
           window.location.href = '/index.html';
         }
         async function getCurrentUser() {
-          try {
-            const res = await fetch('/api/users/current');
-            if (!res.ok) throw new Error('Failed to get current user');
-            const data = await res.json();
-            return data.user.id;
-          } catch (err) {
-            error.value = err.message;
-            return null;
-          }
-        }
+          const res= await fetch('/api/users/current');
         async function applyToWalk(requestId) {
           try {
             const res = await fetch(`/api/walks/${requestId}/apply`, {
