@@ -46,3 +46,4 @@ router.get('/walkers/summary', async (req, res) => {
         ROUND(AVG(r.rating), 1) AS average_rating,
         (SELECT COUNT(*)
             FROM WalkRequests wr
+            JOIN Walkers w ON wr.walker_id = w.walker_idALK
