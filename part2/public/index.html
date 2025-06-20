@@ -19,7 +19,7 @@
       <form id="loginForm">
         <div class="mb-3">
           <label for="username" class="form-label"> Username</label>
-          <input type="text" class="form-control" id="email" required>
+          <input type="text" class="form-control" id="username" required>
         </div>
         <div class="mb-3">
           <label for="password" class="form-label">Password</label>
@@ -41,7 +41,7 @@
     }).mount('#app');
   document.getElementById('loginForm').addEventListener('submit',async function(event) {
       event.preventDefault();
-      const username = document.getElementById('email').value;
+      const username = document.getElementById('').value;
       const password = document.getElementById('password').value;
       try {
         const res=await fetch('/api/users/login',
