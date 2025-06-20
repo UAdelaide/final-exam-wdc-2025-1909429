@@ -41,19 +41,9 @@
     }).mount('#app');
   document.getElementById('loginForm').addEventListener('submit', function(event) {
       event.preventDefault();
-      try {
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-
-        if (username === 'admin' && password === 'password') {
-          alert('Login successful!');
-          // Redirect to the main page or perform other actions
-        } else {
-          alert('Invalid username or password.');
-        }
-      } catch (error) {
-        console.error('Error during login:', error);
-      }
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      try
 
 
   </script>
