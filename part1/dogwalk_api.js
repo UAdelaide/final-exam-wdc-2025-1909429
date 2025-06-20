@@ -16,4 +16,6 @@ router.get('/dogs', async (req, res) => {
     try {
         const [rows] = await pool.query(
             `SELECT Dogs.name AS dog_name, Dogs.size, Users.username AS owner_username
-            FROM Dogs`
+            FROM Dogs
+            LEFT JOIN Users ON Dogs.owner_id = Users.user_id`);
+            
