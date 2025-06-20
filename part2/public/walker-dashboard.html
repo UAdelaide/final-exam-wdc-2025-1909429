@@ -81,7 +81,10 @@
             alert(data.message);
             loadWalkRequests();
           } catch (err) {
-            error.value = err.message;
+            console.error('Error applying to walk:', err);
+            alert('Failed to apply to walk: ' + err.message);
+          }
+        }
 
             if (!res.ok) throw new Error(result.error || 'Application failed');
             message.value = result.message;
