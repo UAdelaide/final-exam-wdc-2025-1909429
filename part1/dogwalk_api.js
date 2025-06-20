@@ -56,4 +56,5 @@ router.get('/walkers/summary', async (req, res) => {
         res.json(rows);
     } catch (error) {
         res.status(500).json({ error: 'Internal Server Error' });
-    }
+
+        
