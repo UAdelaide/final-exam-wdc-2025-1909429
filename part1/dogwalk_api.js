@@ -9,6 +9,7 @@ const pool = mysql.createPool({
   password: 'root',
   database: 'DogWalkService'
 });
+
 async function initializeDatabase() {
   db = await mysql.createConnection({
     host: 'localhost',
