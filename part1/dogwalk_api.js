@@ -17,4 +17,7 @@ async function initializeDatabase() {
 app.get('/api/walks', async (req, res) => {
   try {
     const [rows] = await db.execute('
-        SELECT Dogs.name AS dog_name,Dogs.size,Users.name AS owner_username F)
+        SELECT Dogs.name AS dog_name,Dogs.size,Users.name AS owner_username FROM Dogs
+        JOIN Users ON Dogs.owner_id = Users.id');
+    res.json(rows);
+  }
