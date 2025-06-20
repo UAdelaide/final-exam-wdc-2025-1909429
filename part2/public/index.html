@@ -65,14 +65,11 @@
         } else {
           alert('Login failed: ' + data.message||'Unknown error');
         }
-     console.log('Login successful:', data)
-      }
-
-    } catch (error) {
-        console.error('Error during login:', error);
-        alert('Login failed. Please try again.');
-  }
-});
+     } catch (error) {
+      console.error('Login error:', error);
+      alert('Login failed. Please try again.');
+    }
+  });
 
   </script>
   </div>
