@@ -23,3 +23,5 @@ app.get('/api/walks', async (req, res) => {
   }catch (error) {
     res.status(500).json({ error: 'Database query failed' ,details: error.message  });
     }
+);
+
