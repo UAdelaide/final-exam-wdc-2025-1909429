@@ -50,5 +50,10 @@ router.get('/walkers/summary', async (req, res) => {
             WHERE wa2.walker_id = u.user_id AND wr.status = 'completed' AND  wa2.status='accepted') AS completed_walks
         FROM Users u
         LEFT JOIN WalkRatings r ON r.walker_id = u.user_id
-      WHERE u.role = 'walker'
-      GROUP BY u.user_id
+        WHERE u.role = 'walker'
+        GROUP BY u.user_id
+        `);
+        res.json(rows);
+    } catch (error) {
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
