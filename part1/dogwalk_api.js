@@ -13,3 +13,5 @@ async function initializeDatabase() {
   });
   console.log('Database connected');
 }
+
+app
