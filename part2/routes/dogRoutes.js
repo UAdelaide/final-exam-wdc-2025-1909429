@@ -8,7 +8,7 @@ router.get('/dogs', async (req, res) => {
         SELECT dog_id, name, size FROM Dogs
 
     `);
-    res.json(dogs);
+    res.json(rows);
   } catch (error) {
     res.status(500).json({ error: 'Internal Server Error' });
   }
