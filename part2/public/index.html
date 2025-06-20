@@ -61,9 +61,9 @@
           console.log('User is an owner');
           window.location.href = '/owner-dashboard.html';
         } else if (data.user.role=="walker") {
-          alert('Login successful!');
-          // Redirect to the dashboard or another page
-          window.location.href = data.redirect;
+          console.log('User is a walker');
+          window.location.href = '/walker-dashboard.html';
+          
         } else {
           alert('Login failed: ' + data.message);
         }
