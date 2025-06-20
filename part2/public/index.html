@@ -41,16 +41,19 @@
     }).mount('#app');
   document.getElementById('loginForm').addEventListener('submit', function(event) {
       event.preventDefault();
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
+      try {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
 
-      // Simulate a login process
-      if (username === 'user' && password === 'password') {
-        alert('Login successful!');
-      } else {
-        alert('Invalid username or password.');
+        if (username === 'admin' && password === 'password') {
+          alert('Login successful!');
+          // Redirect to the main page or perform other actions
+        } else {
+          alert('Invalid username or password.');
+        }
+      } catch (error) {
+        console.error('Error during login:', error);
       }
-    });
 
 
   </script>
