@@ -16,7 +16,9 @@ app.use(session({
     cookie:{
         secure: false, // Set to true if using HTTPS
         maxAge: 1000 * 60 * 60 // 1 hour
+
     }
+}));
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
