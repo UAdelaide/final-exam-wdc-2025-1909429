@@ -89,11 +89,8 @@
         async loadDogs() {
           try {
             const response = await fetch('/api/dogs');
-            if (!response.ok) throw new Error('Failed to fetch dogs');
-            this.dogs = await response.json();
-          } catch (error) {
-            console.error('Error loading dogs:', error);
-          }
+            const doglist = await response.json();
+            
         }
       }
     }).mount('#app');
