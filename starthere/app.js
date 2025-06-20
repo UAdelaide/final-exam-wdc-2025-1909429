@@ -1,17 +1,17 @@
+const dogwalkApi = require('../part1/dogwalk_api');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mysql = require('mysql2/promise');
-const dogwalkApi = require('../part1/dogwalk_api');
-var app = express();
 
+var app = express();
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use('/api', dogwalkApi);
+
 let db;
 
 (async () => {
